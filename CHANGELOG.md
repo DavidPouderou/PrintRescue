@@ -1,5 +1,13 @@
 # Journal des versions
 
+## 0.3.1 — 2026-10-14 — Nom de l'auteur visible, comme Optimus Cleaner
+
+- Le bandeau de la fenêtre affiche « v0.3.1 · © 2026 David Pouderou » (mention lue dans les propriétés de l'exécutable,
+  source unique `Directory.Build.props`), comme le pied de page d'Optimus Cleaner. Le rapport HTML porte la même mention
+  en en-tête et en pied de page.
+- Rappel : l'exécutable est signé Authenticode avec le certificat de l'auteur (`CN=David Pouderou`) et horodaté ; ses
+  propriétés Windows indiquent « David Pouderou » et « © 2026 David Pouderou. Tous droits réservés. ». Inchangé.
+
 ## 0.3.0 — 2026-10-14 — Distribution par GitHub, signature et mise à jour automatique
 
 - **Deux dépôts GitHub** (ADR-0006) : le code source reste privé (`PrintRescue-src`) ; le dépôt public
