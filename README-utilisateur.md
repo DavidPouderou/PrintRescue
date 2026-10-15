@@ -59,8 +59,8 @@ relancé à la fin.
 
 ### 3 · Journal
 
-Tout ce qui a été constaté et fait, avec l'heure et le résultat. **Rapport…** demande le nom du site ou de
-l'organisation (facultatif) puis ouvre un rapport HTML (imprimable en PDF). **Ouvrir le dossier** montre les
+Tout ce qui a été constaté et fait, avec l'heure et le résultat. **Rapport d'intervention** demande le nom du site
+ou de l'organisation (facultatif) puis ouvre un rapport HTML (imprimable en PDF). **Ouvrir le dossier** montre les
 fichiers de l'intervention.
 
 ### Menu « Windows » (en haut à droite)

@@ -1,5 +1,14 @@
 # Journal des versions
 
+## 0.3.2 — 2026-10-15 — Libellés d'interface
+
+- Le bouton de la zone Journal s'appelle désormais **Rapport d'intervention** (au lieu de « Rapport pour le client ») ;
+  l'invite demande « Nom du site ou de l'organisation (facultatif) » et l'en-tête du rapport HTML indique
+  « Organisation » à la place de « Client ». Le format du journal JSONL ne change pas.
+- Même vocabulaire dans les autres textes visibles (bilan : « cas typique sur le poste », « réseau de l'organisation » ;
+  rapport HTML : pied de page et recommandation réseau), dans le guide d'utilisation et dans les commentaires du code.
+- Aucun changement de comportement. Tests : 83 unitaires, inchangés.
+
 ## 0.3.1 — 2026-10-14 — Nom de l'auteur visible, comme Optimus Cleaner
 
 - Le bandeau de la fenêtre affiche « v0.3.1 · © 2026 David Pouderou » (mention lue dans les propriétés de l'exécutable,
