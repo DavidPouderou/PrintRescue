@@ -59,8 +59,9 @@ relancé à la fin.
 
 ### 3 · Journal
 
-Tout ce qui a été constaté et fait, avec l'heure et le résultat. **Rapport pour le client** demande le nom du client
-puis ouvre un rapport HTML (imprimable en PDF). **Ouvrir le dossier** montre les fichiers de l'intervention.
+Tout ce qui a été constaté et fait, avec l'heure et le résultat. **Rapport…** demande le nom du site ou de
+l'organisation (facultatif) puis ouvre un rapport HTML (imprimable en PDF). **Ouvrir le dossier** montre les
+fichiers de l'intervention.
 
 ### Menu « Windows » (en haut à droite)
 
@@ -75,7 +76,7 @@ un logiciel constructeur).
 - **Les pilotes Microsoft et intégrés à Windows ne sont jamais proposés à la suppression.**
 - **Réseau** : l'outil ne contacte que les imprimantes du réseau local et, pour la mise à jour, la page Releases du
   dépôt public GitHub (`github.com`). Rien d'autre, jamais.
-- **Documents des clients** : les fichiers de spool ne sont jamais copiés ni ouverts ; les noms de documents ne sont
+- **Documents des utilisateurs** : les fichiers de spool ne sont jamais copiés ni ouverts ; les noms de documents ne sont
   jamais affichés ni écrits dans le journal.
 
 ## Ce que fait l'outil sur le poste (pour une mise en liste blanche antivirus)
@@ -96,7 +97,7 @@ un logiciel constructeur).
 
 `Journal\<date_heure>_<poste>\` : `journal.jsonl` (toutes les entrées), `sauvegarde-registre\*.reg`,
 `inventaire-avant.json`, `rapport-intervention.html` après export. `mises-a-jour.log` : historique des mises à jour de
-l'outil (versions, dates, raisons), sans donnée client.
+l'outil (versions, dates, raisons), sans donnée personnelle.
 
 ## Vérifier l'exécutable
 

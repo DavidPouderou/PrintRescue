@@ -28,12 +28,12 @@
   joints à la Release.
 - Tests : 82 unitaires (42 nouveaux) + 11 réels.
 
-## 0.2.1 — 2026-10-08 — Premiers retours du propriétaire
+## 0.2.1 — 2026-10-08 — Premiers retours d'usage
 - **Faux « Redémarrage de Windows en attente »** : la liste `PendingFileRenameOperations` est remplie en permanence par
   des composants sans rapport (services Xbox, antivirus) ; elle n'est désormais prise en compte que si elle concerne
   des fichiers d'impression ou de pilotes. Les deux indicateurs fiables (maintenance Windows, Windows Update) restent.
 - **« Windows change l'imprimante par défaut tout seul »** : texte réécrit en français courant (ce que fait le réglage,
-  le symptôme typique chez un client, ce que fait le bouton « Corriger », comment revenir en arrière). Plus de jargon
+  le symptôme typique sur le poste, ce que fait le bouton « Corriger », comment revenir en arrière). Plus de jargon
   « valeur 1 » ni « origine probable » pour les réglages locaux.
 - Tests : 40 unitaires (2 nouveaux) + 11 réels.
 - Empreinte SHA-256 de `publish\win-x64\PrintRescue.exe` (build du 2026-10-08, 67,5 Mo) :
@@ -53,7 +53,7 @@
 - **Retirés** : SNMP, test direct IPP, Identify-Printer, impression directe et PDF minimal, page de test GDI (et la
   dépendance WinForms), inventaire des logiciels constructeur, vérification/réparation WMI, sfc, journal Operational,
   installation depuis INF, retrait manuel de périphérique PnP, mode simulation, thème, échelle, rapport Markdown.
-- **Catalogue de réglages** réduit de 21 à 14 (ceux qui bloquent réellement l'impression sur un poste client), avec des
+- **Catalogue de réglages** réduit de 21 à 14 (ceux qui bloquent réellement l'impression sur un poste), avec des
   titres lisibles.
 - **Tests** : 38 unitaires (10 nouveaux) + 11 réels, tous verts le 2026-10-06 sur la machine de développement.
 - **Code** : 72 → 53 fichiers, 8 400 → 6 500 lignes ; moteur d'actions, adaptateurs Windows et actions inchangés.
@@ -61,7 +61,7 @@
 - Empreinte SHA-256 de `publish\win-x64\PrintRescue.exe` (build final du 2026-10-06) :
   15ABDB30C85C4C9C99037315B8A7A2CB562A357D3162FE5C07A7519FE1128AD5 (à régénérer après chaque `tools\build.ps1`).
 
-## 0.1.0 — 2026-09-27 — Première version complète (à tester par le propriétaire)
+## 0.1.0 — 2026-09-27 — Première version complète (à éprouver sur le terrain)
 - Bilan express : spouleur, imprimantes, pilotes (protection des pilotes Windows), ports (TCP/IP, WSD, IPP, USB),
   périphériques PnP, magasin de pilotes (packages tiers), stratégies bloquantes (catalogue de 21 réglages),
   logiciels constructeur, système (redémarrage en attente, profil réseau, WMI, Protection système, WPP),

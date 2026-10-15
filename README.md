@@ -1,8 +1,11 @@
 # PrintRescue
 
-Outil portable de dépannage d'impression pour Windows 10 et 11 (éditions Famille comprises),
-pensé pour le technicien en intervention : bilan du poste, réparation en cinq cases, journal et
-rapport pour le client. Un seul fichier `.exe`, sans installation.
+Une imprimante qui « bugue », et toujours la même routine à refaire à la main : purger le spouleur,
+supprimer la file, retirer les pilotes, réinstaller proprement, vérifier. PrintRescue la joue en
+cinq cases cochées, sans jamais rien casser : il dresse d'abord le bilan du poste, répare ce que
+vous cochez après vous avoir montré son plan, puis consigne tout dans un journal et un rapport
+d'intervention. Windows 10 et 11, éditions Famille comprises. Un seul fichier `.exe`, sans
+installation.
 
 ## Téléchargement
 
@@ -46,7 +49,7 @@ Une seule fenêtre, trois zones lues de haut en bas :
 2. **Réparer** : cinq cases — réinitialiser le spouleur, supprimer des imprimantes, supprimer
    les pilotes constructeur, réinstaller l'imprimante réseau en IPP avec le pilote Microsoft
    intégré, page de test — et un bouton. Chaque étape affiche son plan et attend confirmation.
-3. **Journal** : tout ce qui a été constaté et fait ; rapport HTML pour le client.
+3. **Journal** : tout ce qui a été constaté et fait ; rapport HTML d'intervention.
 
 ## Sécurité des opérations
 
