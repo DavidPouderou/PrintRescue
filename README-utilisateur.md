@@ -3,7 +3,10 @@
 Outil portable de dépannage d'impression pour Windows 10 et 11 (éditions Famille comprises). Un seul fichier :
 `PrintRescue.exe`, téléchargé depuis la page [Releases](https://github.com/DavidPouderou/PrintRescue/releases/latest).
 Aucune installation, aucune télémétrie ; la seule connexion Internet est la recherche de mise à jour (voir plus bas).
-Le journal est écrit à côté de l'EXE (ou dans `%LOCALAPPDATA%\PrintRescue` si la clé USB est en lecture seule).
+Tout ce que l'outil écrit va dans un seul dossier, **`Logs PrintRescue`**, créé à côté de l'EXE : à la racine de la clé,
+il ne reste que `PrintRescue.exe`, rangé à côté des autres applications (ou `%LOCALAPPDATA%\PrintRescue` si la clé USB
+est en lecture seule). Les fichiers laissés à la racine par les versions 0.3.4 et antérieures y sont déplacés au
+premier lancement.
 
 ## Démarrage
 
@@ -26,8 +29,8 @@ travailler), puis :
 Avant de remplacer l'exécutable, l'outil contrôle l'empreinte du fichier, sa signature (qui doit être celle de l'auteur)
 et sa version ; une version plus ancienne n'est jamais installée. Sans connexion, dépôt injoignable ou clé en lecture
 seule : rien ne change, l'outil démarre normalement. Pour désactiver : lancer avec `--no-update` (une fois) ou mettre
-`"AutoUpdate": false` dans `PrintRescue.config.json` (définitif). `PrintRescue.exe --update` vérifie et installe la
-dernière version sans ouvrir la fenêtre. Le détail est consigné dans `mises-a-jour.log`, à côté de l'EXE.
+`"AutoUpdate": false` dans `Logs PrintRescue\PrintRescue.config.json` (définitif). `PrintRescue.exe --update` vérifie
+et installe la dernière version sans ouvrir la fenêtre. Le détail est consigné dans `Logs PrintRescue\mises-a-jour.log`.
 
 ## La fenêtre
 
@@ -93,14 +96,19 @@ un logiciel constructeur).
   restauration, `reg.exe export`, `powershell.exe Add-Printer -IppURL` (ajout d'une file IPP), `rundll32 printui.dll`
   (page de test, boîtes de dialogue Windows).
 - Mise à jour : une requête HTTPS vers `github.com` (manifeste `latest.json`), puis, s'il existe une version plus récente,
-  téléchargement de `PrintRescue.exe` dans le dossier de l'outil (`PrintRescue.exe.new`), renommage de l'ancien en
-  `PrintRescue.exe.old` (effacé au lancement suivant). Rien hors de ce dossier.
+  téléchargement de `PrintRescue.exe` dans `Logs PrintRescue\PrintRescue.exe.new`, déplacement de l'ancien en
+  `Logs PrintRescue\PrintRescue.exe.old` (effacé au lancement suivant), le nouveau prend sa place. Rien hors du
+  dossier de l'outil.
 
 ## Fichiers produits
 
-`Journal\<date_heure>_<poste>\` : `journal.jsonl` (toutes les entrées), `sauvegarde-registre\*.reg`,
-`inventaire-avant.json`, `rapport-intervention.html` après export. `mises-a-jour.log` : historique des mises à jour de
-l'outil (versions, dates, raisons), sans donnée personnelle.
+Tous dans `Logs PrintRescue\`, à côté de l'EXE :
+
+- `Journal\<date_heure>_<poste>\` : `journal.jsonl` (toutes les entrées), `sauvegarde-registre\*.reg`,
+  `inventaire-avant.json`, `rapport-intervention.html` après export ;
+- `mises-a-jour.log` : historique des mises à jour de l'outil (versions, dates, raisons), sans donnée personnelle ;
+- `PrintRescue.config.json` (réglages, facultatif), `PrintRescue.debug.log` et `PrintRescue.crash.log` (voir plus bas) ;
+- pendant une mise à jour seulement : `PrintRescue.exe.new`, `.new.part`, `.old`.
 
 ## Vérifier l'exécutable
 
@@ -111,8 +119,8 @@ SHA-256 de chaque version est dans `SHA256SUMS.txt` sur la page Releases.
 
 ## Réglages (facultatif)
 
-Aucun écran de réglages. Pour les cas particuliers, un fichier `PrintRescue.config.json` à côté de l'EXE est lu s'il
-existe :
+Aucun écran de réglages. Pour les cas particuliers, un fichier `Logs PrintRescue\PrintRescue.config.json` est lu
+s'il existe :
 
 ```json
 { "Technician": "Nom affiché dans le rapport", "DebugLog": false, "ProbeNetwork": true, "NetworkTimeoutMs": 1200, "JournalFolder": "", "AutoUpdate": true }
@@ -120,5 +128,5 @@ existe :
 
 ## En cas de problème avec l'outil lui-même
 
-Mettre `"DebugLog": true` dans le fichier ci-dessus, reproduire, puis consulter `PrintRescue.debug.log`.
-Un plantage est toujours consigné dans `PrintRescue.crash.log`.
+Mettre `"DebugLog": true` dans le fichier ci-dessus, reproduire, puis consulter `Logs PrintRescue\PrintRescue.debug.log`.
+Un plantage est toujours consigné dans `Logs PrintRescue\PrintRescue.crash.log`.

@@ -35,7 +35,7 @@ signature et sa version, puis :
   l'outil et utilisée au lancement suivant : rien n'est interrompu.
 
 Sans connexion, il démarre normalement. `--no-update` désactive la vérification pour un
-lancement ; `"AutoUpdate": false` dans `PrintRescue.config.json` la désactive définitivement ;
+lancement ; `"AutoUpdate": false` dans `Logs PrintRescue\PrintRescue.config.json` la désactive définitivement ;
 `--update` l'exécute sans ouvrir la fenêtre. C'est la seule adresse Internet que l'outil
 contacte ; il ne contacte jamais autre chose que les imprimantes du réseau local.
 
@@ -63,8 +63,9 @@ Une seule fenêtre, trois zones lues de haut en bas :
 4. Aucune écriture de registre hors d'un catalogue fermé de réglages d'impression.
 5. Les fichiers de spool ne sont jamais copiés ni ouverts ; les noms de documents ne sont jamais
    affichés ni écrits dans le journal.
-6. Portable : rien n'est installé, aucune tâche planifiée, aucun service ; journal écrit à côté
-   de l'exécutable.
+6. Portable : rien n'est installé, aucune tâche planifiée, aucun service ; tout ce que l'outil
+   écrit (journaux, réglages, mises à jour) va dans un seul dossier, `Logs PrintRescue`, à côté
+   de l'exécutable : la clé reste rangée, même avec d'autres applications.
 
 ## Vérifier un téléchargement
 
@@ -85,9 +86,10 @@ contrôles, plus stricts encore, avant chaque mise à jour automatique.
 ## Signaler un problème
 
 Par les [Issues](https://github.com/DavidPouderou/PrintRescue/issues) de ce dépôt, avec la
-version (affichée dans le bandeau de la fenêtre), le dossier `Journal\<date>_<poste>\` de
-l'intervention et, si possible, `PrintRescue.debug.log` (après avoir mis `"DebugLog": true` dans
-`PrintRescue.config.json`). Le journal contient des noms de postes et d'imprimantes, jamais de
+version (affichée dans le bandeau de la fenêtre), le dossier
+`Logs PrintRescue\Journal\<date>_<poste>\` de l'intervention et, si possible,
+`Logs PrintRescue\PrintRescue.debug.log` (après avoir mis `"DebugLog": true` dans
+`Logs PrintRescue\PrintRescue.config.json`). Le journal contient des noms de postes et d'imprimantes, jamais de
 noms de documents : le relire avant de le joindre.
 
 ## Licence

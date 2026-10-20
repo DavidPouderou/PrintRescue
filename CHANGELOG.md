@@ -1,5 +1,20 @@
 # Journal des versions
 
+## 0.3.5 — 2026-10-20 — Un seul dossier « Logs PrintRescue » sur la clé
+
+- Jusqu'ici, PrintRescue écrivait ses fichiers à la racine de la clé, à côté de l'EXE : `PrintRescue.config.json`,
+  `mises-a-jour.log`, un dossier `Journal` au nom générique et, pendant une mise à jour, `PrintRescue.exe.new` et
+  `PrintRescue.exe.old`. Sur une clé qui porte plusieurs applications, on ne savait plus à qui appartenait quoi.
+- Désormais, **tout ce que PrintRescue écrit va dans un seul dossier, `Logs PrintRescue`**, créé à côté de l'EXE :
+  réglages, journaux d'intervention (sauvegardes `.reg`, inventaire, rapport HTML), journal des mises à jour, journal
+  technique et fichiers de mise à jour en transit. À la racine de la clé, il ne reste que `PrintRescue.exe`. Le nom suit
+  la même convention que `Logs OptimusCleaner` : les deux dossiers se rangent côte à côte.
+- Au premier lancement, les fichiers laissés à la racine par les versions précédentes sont déplacés dans ce dossier,
+  interventions passées comprises. Les fichiers des autres applications ne sont jamais touchés, et rien n'est écrasé.
+- Pour modifier un réglage, le fichier est maintenant `Logs PrintRescue\PrintRescue.config.json`.
+- Si la clé est en lecture seule, rien ne change : l'outil écrit dans `%LOCALAPPDATA%\PrintRescue` et le signale.
+- Tests : 98 unitaires (7 nouveaux).
+
 ## 0.3.4 — 2026-10-20 — Écran « Opération en cours »
 
 - Après « Exécuter », rien ne montrait que l'outil travaillait : la confirmation se fermait et seul un petit anneau,
