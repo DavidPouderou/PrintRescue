@@ -48,7 +48,9 @@ Une seule fenêtre, trois zones lues de haut en bas :
    bouton de correction ; liste des imprimantes avec état, page de test et menu d'actions.
 2. **Réparer** : cinq cases — réinitialiser le spouleur, supprimer des imprimantes, supprimer
    les pilotes constructeur, réinstaller l'imprimante réseau en IPP avec le pilote Microsoft
-   intégré, page de test — et un bouton. Chaque étape affiche son plan et attend confirmation.
+   intégré, page de test — et un bouton. Chaque étape affiche son plan et attend confirmation ;
+   pendant l'exécution, un écran « Opération en cours » montre l'avancement et se ferme de
+   lui-même à la fin.
 3. **Journal** : tout ce qui a été constaté et fait ; rapport HTML d'intervention.
 
 ## Sécurité des opérations

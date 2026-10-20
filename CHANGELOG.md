@@ -1,5 +1,25 @@
 # Journal des versions
 
+## 0.3.4 — 2026-10-20 — Écran « Opération en cours »
+
+- Après « Exécuter », rien ne montrait que l'outil travaillait : la confirmation se fermait et seul un petit anneau,
+  en haut de la fenêtre, signalait l'activité, alors qu'un point de restauration ou un redémarrage du spouleur peut
+  prendre plusieurs minutes. Il était tentant de recliquer.
+- Désormais, dès la confirmation, un écran **« Opération en cours »** recouvre la fenêtre : animation, « Étape 2 sur 3 »,
+  temps écoulé, et la liste de ce qui se fait, cochée au fil de l'exécution (✔ réussi, ✘ en échec, – non exécuté).
+  Avec « Lancer la réparation », les étapes cochées sont listées et l'écran reste ouvert de l'une à l'autre.
+- L'écran se ferme de lui-même une fois le bilan mis à jour ; une notification rappelle ensuite le résultat (orange si
+  une étape a échoué). Tant qu'il est ouvert, aucun bouton n'est cliquable dessous : impossible de relancer une action
+  par erreur ; fermer PrintRescue est aussi refusé, car cela interromprait l'action en cours (spouleur laissé arrêté,
+  pilote à moitié retiré).
+- Le bilan est refait dès qu'une étape a touché au poste, même si la séquence s'est arrêtée ensuite, et même si un bilan
+  était déjà en cours au moment de l'action.
+- Correction : après la suppression d'une imprimante, le bilan annonçait à tort **« Redémarrage de Windows en
+  attente »**. Windows efface au démarrage suivant le cache de l'imprimante supprimée (`spool\V4Dirs`), ce qui ne
+  demande pas de redémarrer. Seuls comptent désormais les fichiers de pilotes d'impression et du spouleur en attente,
+  en plus de Windows Update et des mises à jour de composants.
+- Tests : 91 unitaires (8 nouveaux).
+
 ## 0.3.3 — 2026-10-20 — Icône visible dans l'Explorateur
 
 - `PrintRescue.exe` pouvait s'afficher avec une **page blanche à la place de son icône** dans l'Explorateur Windows

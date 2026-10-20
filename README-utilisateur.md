@@ -36,7 +36,9 @@ dernière version sans ouvrir la fenêtre. Le détail est consigné dans `mises-
 - Une ligne d'en-tête : nombre de problèmes et d'avertissements.
 - La liste des **constats**, du plus grave au moins grave. Quand une correction existe, un bouton est à droite
   (« Réinitialiser le spouleur », « Remettre en ligne », « Désactiver l'état SNMP », « Corriger », « Réinstaller en IPP »…).
-  Le bouton affiche d'abord ce qui va être fait, puis attend votre confirmation.
+  Le bouton affiche d'abord ce qui va être fait, puis attend votre confirmation. Dès que vous confirmez, un écran
+  « Opération en cours » recouvre la fenêtre (animation, liste de ce qui se fait cochée au fil de l'exécution, temps
+  écoulé) et se ferme de lui-même une fois le bilan relancé : inutile de recliquer, même si cela prend plusieurs minutes.
 - La liste des **imprimantes** : état (Prête, Hors connexion, En pause, Erreur), pilote, type de port et adresse.
   « Page de test » imprime la page de test Windows. « Actions » ouvre un menu adapté à l'imprimante : par défaut,
   remettre en ligne, reprendre, purger, convertir le port WSD en TCP/IP, ouvrir la file, page web, supprimer.
@@ -53,7 +55,8 @@ dernière version sans ouvrir la fenêtre. Le détail est consigné dans `mises-
 5. **Page de test** sur l'imprimante choisie (ou sur celle qui vient d'être réinstallée).
 
 Cochez, puis **Lancer la réparation**. Chaque étape affiche son plan et attend votre confirmation ; si vous annulez
-une étape, la séquence s'arrête. Avant toute suppression (étapes 2 et 3), l'outil crée un point de restauration (si la
+une étape, la séquence s'arrête. Dès la première confirmation, l'écran « Réparation en cours » liste les étapes cochées,
+montre celle qui s'exécute et son détail, puis se ferme de lui-même à la fin. Avant toute suppression (étapes 2 et 3), l'outil crée un point de restauration (si la
 Protection système le permet), exporte le registre d'impression en `.reg` et enregistre un inventaire. Le bilan est
 relancé à la fin.
 
