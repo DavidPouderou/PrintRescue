@@ -1,5 +1,18 @@
 # Journal des versions
 
+## 0.3.3 — 2026-10-20 — Icône visible dans l'Explorateur
+
+- `PrintRescue.exe` pouvait s'afficher avec une **page blanche à la place de son icône** dans l'Explorateur Windows
+  (constaté sur une clé USB), alors que l'icône est bien dans le fichier. Quand l'Explorateur échoue une fois à lire
+  l'icône d'un fichier, il mémorise cette page blanche pour ce chemin et cette date de modification, puis la ressert à
+  chaque recopie du même fichier ; F5 n'y change rien. Les petites tailles de l'icône (16 à 48 px, celles des vues
+  Liste et Détails) étaient compressées en PNG, format que Microsoft réserve à la taille 256 px.
+- Correction : icône régénérée au format classique (bitmap non compressé de 16 à 48 px, PNG de 64 à 256 px), comme
+  Optimus Cleaner. Même dessin. Cette version ayant une nouvelle date, l'Explorateur relit son icône.
+- Si une ancienne version reste en page blanche sur une clé : la remplacer par celle-ci suffit (à défaut, renommer le
+  fichier).
+- Aucun changement de comportement. Tests : 83 unitaires, inchangés.
+
 ## 0.3.2 — 2026-10-15 — Libellés d'interface
 
 - Le bouton de la zone Journal s'appelle désormais **Rapport d'intervention** (au lieu de « Rapport pour le client ») ;
